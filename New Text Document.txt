@@ -1,0 +1,10 @@
+InputStream databaseInputStream7 = getResources().openRawResource(R.raw.negativeKeywords);
+        try {
+            File file = new File(getBaseContext().getFilesDir(), "negetivekeywords.txt");
+            OutputStream out= openFileOutput("negetivekeywords.txt", Context.MODE_PRIVATE);
+            IOUtils.copy(databaseInputStream7, out);
+            databaseInputStream7.close();
+            out.close();
+        }
+        catch (IOException e){}
+.
